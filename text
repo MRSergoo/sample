@@ -1,0 +1,19 @@
+# -*- coding: utf-8 -*-
+# Расчет определенного интеграла методом трапеций
+def my_func(expr_with_x, x):
+    return eval(expr_with_x)
+
+expr_with_x=input("Функция: ")
+start=eval(input("Левая граница: "))
+end=eval(input("Правая граница: "))
+step=eval(input("Шаг: "))
+
+
+def integr(expr_with_x, start, end, step):
+    sum=0
+    for x in range(start, end, step):
+        sum = 0.5*step*(my_func(expr_with_x, x)+my_func(expr_with_x, x+step)-2*my_func(expr_with_x, 0))+sum 
+        
+    return sum
+ 
+print(integr(expr_with_x,start, end, step))
